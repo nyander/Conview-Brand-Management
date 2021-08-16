@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProductDetailsController;
+use App\Http\Controllers\CollectionsController;
+use App\Http\Controllers\FabricsController;
+use App\Http\Controllers\FabricTypesController;
+use App\Http\Controllers\SizeTypesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +28,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::resource('products', ProductsController::class);
+Route::resource('productdetails', ProductDetailsController::class);
+Route::resource('collections', CollectionsController::class);
+Route::resource('fabrics', FabricsController::class);
+Route::resource('fabrictypes', FabricTypesController::class);
+Route::resource('sizetypes', SizeTypesController::class);
