@@ -23,6 +23,7 @@
 
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
         <link rel="stylesheet" href="{{asset('css/style.css')}}"> 
+        <link rel="stylesheet" href="{{asset('css/tailwind.css')}}"> 
         <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 
@@ -30,6 +31,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+        <script src="{{ asset('js/main.js') }}" defer></script>
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -43,7 +45,8 @@
             @include('inc.messages')
             @yield('content')
         </div>
-    </body>
+    </body> 
+    @stack('scripts')
 </html>
 
 
