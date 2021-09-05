@@ -37,3 +37,4 @@ Route::resource('fabrics', FabricsController::class);
 Route::resource('fabrictypes', FabricTypesController::class);
 Route::resource('sizetypes', SizeTypesController::class);
 Route::resource('messages', MessagesController::class);
+Route::get('conversation/{userId}', [MessagesController::class, 'conversation'])->name('messages.conversation');

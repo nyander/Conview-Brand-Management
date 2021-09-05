@@ -86,4 +86,18 @@ class MessagesController extends Controller
     {
         //
     }
+
+
+    public function conversation($userId)
+    {
+        $users = User::where('id', '!=', Auth::id())->get();
+        $friendInfo = User::findOrFail($userId);
+        $myInfo = User::find(Auth::id());
+
+        $this->data['users'] = $users;
+        $this->data['friendInfo'] = $friendInfo;
+        $this->data['myInfo'] = $myInfo;
+
+        return view('messages.conversation', $this->data);
+    }
 }
